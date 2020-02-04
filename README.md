@@ -56,7 +56,7 @@ yarn add -P react react-dom
 - add storybook for react as a devDependency
 
 ```
-yarn add -D @storybook/react
+yarn add -D @storybook/react @storybook/addon-actions
 ```
 
 - storybook needs babel so let's add it as devDependency
@@ -66,6 +66,12 @@ yarn add -D babel-loader @babel/core
 ```
 
 - follow storybook docs https://storybook.js.org/docs/guides/guide-react/ until step 3
+
+- `yarn add -D typescript awesome-typescript-loader`
+
+- set ts.config and webpack config in ./.storybook/main.js
+
+- create a component and its stories using the folder structure src/components/Button
 
 - lerna bootstrap ????????????????
 
