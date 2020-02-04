@@ -1,0 +1,19 @@
+{
+  "name": "@monorepo/ui-lib",
+  "version": "1.0.0",
+  "description": "UI library for the monorepo",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "storybook": "start-storybook -p 6006"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@storybook/react": "^5.3.10",
+    "babel-loader": "^8.0.6"
+  }
+}

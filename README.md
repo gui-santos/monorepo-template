@@ -44,10 +44,32 @@
 
 - in ./app start a nextjs project (link to docs)
 
+### UI-Lib
+
 - in ./ui-lib start a storybook project (link to docs)
 - react is a peer dependency because we want whoever is consuming the lib to define react's version
 
-- lerna bootstrap
+```
+yarn add -P react react-dom
+```
+
+- add storybook for react as a devDependency
+
+```
+yarn add -D @storybook/react
+```
+
+- storybook needs babel so let's add it as devDependency
+
+```
+yarn add -D babel-loader @babel/core
+```
+
+- follow storybook docs https://storybook.js.org/docs/guides/guide-react/ until step 3
+
+- lerna bootstrap ????????????????
+
+### WIP
 
 - add typescript to nextjs (docs)
 
