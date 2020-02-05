@@ -1,11 +1,9 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "jsx": "react",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "outDir": "lib",
     "declaration": true,
-    "strict": true
+    "jsx": "react",
+    "outDir": "lib"
   },
   "include": ["src"],
   "exclude": ["node_modules", "lib", "**/*.test.ts"]
