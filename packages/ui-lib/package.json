@@ -2,7 +2,8 @@
   "name": "@monorepo/ui-lib",
   "version": "1.0.0",
   "description": "UI library for the monorepo",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "license": "MIT",
   "scripts": {
     "storybook": "start-storybook -p 6006"

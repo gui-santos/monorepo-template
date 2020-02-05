@@ -3,6 +3,9 @@
 ### Things in this Template
 
 - Lerna
+- Next.js
+- Storybook
+- Typescript
 
 ### How to create a similar monorepo?
 
@@ -72,33 +75,41 @@ yarn add -D babel-loader @babel/core
 
 - create a component and its stories using the folder structure src/components/Button
 
+- change package.json
+
+```json
+"main": "./lib/index.js",
+"types": "./lib/index.d.ts",
+```
+
+- run the `yarn tsc` this will create the ./lib
+
+- `yarn lerna bootstrap`
+
 ### Consumer app
 
 - in ./consumer-app start a nextjs project with ts https://nextjs.org/learn/excel/typescript
 - name it @monorepo/consumer-app in package.json
 
-* lerna bootstrap ????????????????
+### Import the Button from the lib in your app
 
-### WIP
+- add the lib in the app dependencies
 
-- add typescript to nextjs (docs)
+```json
+"@monorepo/ui-lib": "*",
+```
 
-- add typescript to ui-lib (articles links)
-- do the configuration webpack madness
+- `yarn lerna add @monorepo/ui-lib` in the root
 
-- create a component in the ui-lib
-
-- consume it in the app
-
-- Voilá!
+- import the component in the app
 
 ### Next steps
 
+- Jest and tests in the ui-lib
+- add styled-components
 - set up prettier and ESLint
 
 ### References
-
-Starting a Monorepo:
 
 - https://dev.to/shnydercom/monorepos-lerna-typescript-cra-and-storybook-combined-4hli
 - https://josephluck.co.uk/blog/next-typescript-monorepo
