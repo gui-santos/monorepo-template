@@ -1,5 +1,7 @@
 ## Monorepo Template
 
+In this repo you find a template to start monorepos with two packages. One is a UI Library with React and Storybook for the creation of components. The other one is a Next.js app that consumes the library. Both packages are already set to use typescript. To manage both, we use Lerna.
+
 ### Things in this Template
 
 - Lerna
@@ -7,7 +9,7 @@
 - Storybook
 - Typescript
 
-### How to create a similar monorepo?
+## How this was done
 
 - set up a new project: `git init` and `yarn init`
 - **IMPORTANT** in package.json, `private` needs to be set to true
@@ -15,7 +17,6 @@
 ```json
 // package.json
 {
-  // ...
   "private": true
 }
 ```
@@ -38,14 +39,13 @@
 ```json
 // package.json
 {
-  // ...
   "workspaces": ["packages/*"]
 }
 ```
 
 - inside ./packages create two folders ./ui-lib and ./consumer-app
 
-### UI-Lib
+### Creating the UI Library
 
 - in ./ui-lib start a storybook project (link to docs)
 - react is a peer dependency because we want whoever is consuming the lib to define react's version
@@ -86,12 +86,12 @@ yarn add -D babel-loader @babel/core
 
 - `yarn lerna bootstrap`
 
-### Consumer app
+### Creating the consumer app
 
 - in ./consumer-app start a nextjs project with ts https://nextjs.org/learn/excel/typescript
 - name it @monorepo/consumer-app in package.json
 
-### Import the Button from the lib in your app
+### Import the Button from the library in your app
 
 - add the lib in the app dependencies
 
@@ -103,16 +103,18 @@ yarn add -D babel-loader @babel/core
 
 - import the component in the app
 
-### Next steps
+Done!
 
-- Jest and tests in the ui-lib
-- add styled-components
-- set up prettier and ESLint
-
-### References
+## References
 
 - https://dev.to/shnydercom/monorepos-lerna-typescript-cra-and-storybook-combined-4hli
 - https://josephluck.co.uk/blog/next-typescript-monorepo
 
 - Storybook: https://blog.crowdbotics.com/setup-a-react-app-with-typescript-storybook-and-crowdbotics/
 - Next.js: https://nextjs.org/learn/excel/typescript
+
+## Next steps
+
+- Jest and tests in the ui-lib
+- add styled-components
+- set up prettier and ESLint
