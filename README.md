@@ -40,14 +40,13 @@
 }
 ```
 
-- inside ./packages create two folders ./ui-lib and ./app
-
-- in ./app start a nextjs project (link to docs)
+- inside ./packages create two folders ./ui-lib and ./consumer-app
 
 ### UI-Lib
 
 - in ./ui-lib start a storybook project (link to docs)
 - react is a peer dependency because we want whoever is consuming the lib to define react's version
+- name it @monorepo/ui-lib
 
 ```
 yarn add -P react react-dom
@@ -73,7 +72,12 @@ yarn add -D babel-loader @babel/core
 
 - create a component and its stories using the folder structure src/components/Button
 
-- lerna bootstrap ????????????????
+### Consumer app
+
+- in ./consumer-app start a nextjs project with ts https://nextjs.org/learn/excel/typescript
+- name it @monorepo/consumer-app in package.json
+
+* lerna bootstrap ????????????????
 
 ### WIP
 
