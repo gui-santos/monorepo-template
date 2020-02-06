@@ -3,8 +3,5 @@
   "version": "1.0.0",
   "description": "Shared configuration file for prettier",
   "main": "index.json",
-  "license": "MIT",
-  "devDependencies": {
-    "prettier": "^1.19.1"
-  }
+  "license": "MIT"
 }
