@@ -5,8 +5,10 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "license": "MIT",
+  "prettier": "@monorepo/config-prettier",
   "scripts": {
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6060",
+    "build": "tsc"
   },
   "peerDependencies": {
     "react": "^16.12.0",
@@ -14,10 +16,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
+    "@monorepo/config-prettier": "^1.0.0",
     "@storybook/addon-actions": "^5.3.11",
     "@storybook/react": "^5.3.10",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
+    "prettier": "^1.19.1",
     "typescript": "^3.7.5"
   }
 }
