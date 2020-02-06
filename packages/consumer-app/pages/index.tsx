@@ -1,14 +1,22 @@
 import { NextPage } from 'next';
 import { Button } from '@monorepo/ui-lib';
 
-const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
-  <>
-    <h1>Hello world! - user agent: {userAgent}</h1>
-    <Button onClick={() => console.log('clicked')}>Test</Button>
-  </>
-);
+interface UserAgent {
+  userAgent: string;
+}
 
-Home.getInitialProps = async ({ req }) => {
+const Home: NextPage<UserAgent> = ({ userAgent }) => {
+  const handleClick: VoidFunction = () => console.log('clicked!');
+
+  return (
+    <>
+      <h1>Hello world! - user agent: {userAgent}</h1>
+      <Button onClick={handleClick}>Test</Button>
+    </>
+  );
+};
+
+Home.getInitialProps = async ({ req }): Promise<UserAgent> => {
   const userAgent = req ? req.headers['user-agent'] || '' : navigator.userAgent;
   return { userAgent };
 };
