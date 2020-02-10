@@ -23,6 +23,7 @@ In this repo you find a template to start monorepos with two packages. One is a 
 
 - `yarn add lerna -D`
 - then run `yarn lerna init`
+- make sure the version is 'independent' otherwise all the packages will need to be published at the same time
 
 ```json
 // lerna.json
@@ -118,3 +119,5 @@ Done!
 - Jest and tests in the ui-lib
 - add styled-components
 - set up prettier and ESLint
+
+@typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react
