@@ -1,4 +1,4 @@
-## Monorepo Template
+# Monorepo Template
 
 In this repo you find a template to start monorepos with two packages. One is a UI Library with React and Storybook for the creation of components. The other one is a Next.js app that consumes the library. Both packages are already set to use typescript. To manage both, we use Lerna.
 
@@ -8,25 +8,46 @@ In this repo you find a template to start monorepos with two packages. One is a 
 - Next.js
 - Storybook
 - Typescript
+- ESlint + Prettier
+- Jest + React-testing-library
 
-## How this was done
+# How this was done
 
-- set up a new project: `git init` and `yarn init`
-- **IMPORTANT** in package.json, `private` needs to be set to true
+Create a folder and name it "monorepo" for example. Then inside of the directory run:
+
+```
+git init
+yarn init
+```
+
+> We are using yarn here because we will take advantage of [yarn's workspaces](https://classic.yarnpkg.com/en/docs/workspaces/)
+
+You can accept all the default options, but it is very important to add the following to your package.json
 
 ```json
-// package.json
 {
   "private": true
 }
 ```
 
-- `yarn add lerna -D`
-- then run `yarn lerna init`
-- make sure the version is 'independent' otherwise all the packages will need to be published at the same time
+### Adding Lerna
+
+Lerna has a series of commands that will help us to manage and publish our packages.
+To set it up, in the root folder, run:
+
+```
+yarn add lerna -D
+```
+
+And after installing the dependency, run:
+
+```
+yarn lerna init
+```
+
+This will create a `lerna.json` file with some default configurations. Make sure to set `version` to `independent`(this will make versioning of your packages independent from each other) and packages should be set to `packages/*`(this way everytime you create a package, lerna will already be aware of it). And since we want to use yarn workspaces, set `useWorkspaces` to true
 
 ```json
-// lerna.json
 {
   "packages": ["packages/*"],
   "version": "independent",
@@ -35,16 +56,22 @@ In this repo you find a template to start monorepos with two packages. One is a 
 }
 ```
 
-- since we are going to use yarn workspaces, we need to update package.json with:
+Also because yarn workspaces, we need to update our package.json in the root with:
 
 ```json
-// package.json
 {
   "workspaces": ["packages/*"]
 }
 ```
 
-- inside ./packages create two folders ./ui-lib and ./consumer-app
+Now, to get things started, create inside of `./packages` two folders: one called `ui-lib` and other one called `consumer-app`. Your folder structure should look something like this at this point:
+
+```
+/monorepo
+  /packages
+    /consumer-app
+    /ui-lib
+```
 
 ### Creating the UI Library
 
@@ -106,7 +133,7 @@ yarn add -D babel-loader @babel/core
 
 Done!
 
-## References
+# References
 
 - https://dev.to/shnydercom/monorepos-lerna-typescript-cra-and-storybook-combined-4hli
 - https://josephluck.co.uk/blog/next-typescript-monorepo
@@ -114,10 +141,7 @@ Done!
 - Storybook: https://blog.crowdbotics.com/setup-a-react-app-with-typescript-storybook-and-crowdbotics/
 - Next.js: https://nextjs.org/learn/excel/typescript
 
-## Next steps
+# Next steps
 
-- Jest and tests in the ui-lib
-- add styled-components
-- set up prettier and ESLint
+- Add styled-components to the library
 
-@typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react
